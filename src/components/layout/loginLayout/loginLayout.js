@@ -1,9 +1,9 @@
 import React from 'react';
 
-function LoginLayout() {
+function LoginLayout({children}) {
     return (
         <>
-        <h1>Please login to continue</h1>
+        {children}
         </>
     )
 }

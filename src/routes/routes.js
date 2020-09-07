@@ -8,6 +8,7 @@ import LoginLayout from '../components/layout/loginLayout/loginLayout';
 import MainLayout from '../components/layout/mainLayout/mainLayout';
 
 //Pages- components
+import Login from '../pages/login/login';
 import Dashboard from '../pages/dashboard/dashboard';
 import ComplaintsComponent from '../pages/complaints/complaintsComponent';
 import EventsComponent from '../pages/events/eventsComponent';
@@ -20,7 +21,7 @@ const Routes = () => (
         exact
         path="/login"
         layout={LoginLayout}
-        component={LoginLayout}
+        component={Login}
       />
       <AppRoutes
         exact
