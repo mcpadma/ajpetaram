@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Dashboard({children}) {
+function GuestDashboard({children}) {
     return (
         <>
         {children}
@@ -9,4 +9,4 @@ function Dashboard({children}) {
     )
 }
 
-export default Dashboard;
+export default GuestDashboard;

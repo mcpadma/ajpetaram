@@ -3,14 +3,15 @@ import React from 'react';
 import Header from '../header/header';
 
 const contentStyle={
-    'color':'white',
-    'border':'1px solid #fff'
+    
+    'border':'1px solid #ccc'
 }
 function MainLayout({children}) {
     return (
         <>
         <Header/>
         <div style={contentStyle}>
+        {/* check for applying styles to only children not div */}
         {children}
         </div>
         

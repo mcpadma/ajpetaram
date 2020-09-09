@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { withFormik } from "formik";
 import * as Yup from "yup";
+import {Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
 import { withStyles } from "@material-ui/core";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -40,6 +43,10 @@ const styles = () => ({
 // const form = props => {
 function Login(props) {
   const classed = useStyles();
+ const history = useHistory();
+  //const [toNext, setToNext] = useState(false);
+  //const history = props;
+
   const {
     classes,
     values,
@@ -52,6 +59,11 @@ function Login(props) {
     handleReset
   } = props;
 
+  function handleFormSubmit() {
+    //history.push("/admindash");
+    //setToNext(true);
+  }
+
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
@@ -61,7 +73,7 @@ function Login(props) {
       </Grid>
       <Grid container spacing={3}>
         <Grid item xs></Grid>
-        <Grid item xs={10}>
+        <Grid item xs={10} >
           <form onSubmit={handleSubmit}>
             <Card className={classes.card}>
               <CardContent>
@@ -92,7 +104,12 @@ function Login(props) {
                 />
               </CardContent>
               <CardActions className={classes.actions}>
-                <Button type="submit" color="primary" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  color="primary"
+                  disabled={isSubmitting}
+                  onClick={handleFormSubmit}
+                >
                   SUBMIT
                 </Button>
                 <Button color="secondary" onClick={handleReset}>
@@ -100,6 +117,7 @@ function Login(props) {
                 </Button>
               </CardActions>
             </Card>
+            {/* {toNext ? <Redirect to="/Next" /> : null} */}
           </form>
         </Grid>
         <Grid item xs></Grid>
@@ -124,6 +142,7 @@ const LoginForm = withFormik({
     setTimeout(() => {
       alert(JSON.stringify(values, null, 2));
       setSubmitting(false);
+      //history.push('/admindash');
     }, 1000);
   }
 })(Login);

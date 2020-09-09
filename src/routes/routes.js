@@ -8,8 +8,10 @@ import LoginLayout from '../components/layout/loginLayout/loginLayout';
 import MainLayout from '../components/layout/mainLayout/mainLayout';
 
 //Pages- components
+import WelcomePage from '../pages/welcome/welcome';
 import Login from '../pages/login/login';
-import Dashboard from '../pages/dashboard/dashboard';
+import GuestDashboard from '../pages/dashboard/guestDashboard';
+import AdminDashboard from '../pages/dashboard/adminDashboard';
 import ComplaintsComponent from '../pages/complaints/complaintsComponent';
 import EventsComponent from '../pages/events/eventsComponent';
 import SuggestionsComponent from '../pages/suggestions/suggComponent';
@@ -26,8 +28,20 @@ const Routes = () => (
       <AppRoutes
         exact
         path="/"
+        layout={LoginLayout}
+        component={WelcomePage}
+      />
+      <AppRoutes
+        exact
+        path="/admindash"
         layout={MainLayout}
-        component={Dashboard}
+        component={AdminDashboard}
+      />
+      <AppRoutes
+        exact
+        path="/guestdash"
+        layout={MainLayout}
+        component={GuestDashboard}
       />
       <AppRoutes
         path="/complaints"
