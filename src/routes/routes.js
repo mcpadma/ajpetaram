@@ -10,6 +10,7 @@ import MainLayout from '../components/layout/mainLayout/mainLayout';
 //Pages- components
 import WelcomePage from '../pages/welcome/welcome';
 import Login from '../pages/login/login';
+import LoginFormik from '../pages/login/loginFormik';
 import GuestDashboard from '../pages/dashboard/guestDashboard';
 import AdminDashboard from '../pages/dashboard/adminDashboard';
 import ComplaintsComponent from '../pages/complaints/complaintsComponent';
@@ -23,7 +24,7 @@ const Routes = () => (
         exact
         path="/login"
         layout={LoginLayout}
-        component={Login}
+        component={LoginFormik}
       />
       <AppRoutes
         exact
